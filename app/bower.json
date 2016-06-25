@@ -1,0 +1,22 @@
+{
+  "name": "ideaBoard",
+  "authors": [
+    "MatthewCoupal <coupal.matthew@gmail.com>"
+  ],
+  "description": "A board where you can post ideas.",
+  "main": "",
+  "license": "none",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.7"
+  }
+}
