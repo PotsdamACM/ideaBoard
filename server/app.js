@@ -5,7 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('./models/models.js');
 var api = require('./routes/api');
+
+
+var mongoose = require('mongoose');
+// connect to mongodb
+mongoose.connect("mongodb://localhost:27017/idea-test");
+
 var app = express();
 
 // view engine setup
