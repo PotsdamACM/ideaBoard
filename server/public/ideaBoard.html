@@ -1,0 +1,43 @@
+<header>
+    <div class="page-header">
+        <h1>Idea Board <small>A place to share your Hackathon ideas!</small></h1>
+        <p class="lead">
+            This board is to help people share ideas about possible projects for upcoming hackathons. The site does not allow the ability to remove or edit ideas after they have been submitted. Make sure you <em>utilize concise, proper grammer and spelling</em>            to communicate your idea and gain interest!
+        </p>
+    </div>
+</header>
+
+<form ng-submit="post()">
+    <div class="form-group">
+        <label for="username">Idea Originator</label>
+        <input type="text" placeholder="Idea Originator" ng-model="newIdea.username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="idea-name">Idea Name</label>
+        <input type="text" placeholder="Idea Name" ng-model="newIdea.idea_name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="idea-text">Idea Summary</label>
+        <textarea placeholder="Explain your idea!" maxlength="200" ng-model="newIdea.text" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Share Your Idea!</button>
+</form>
+
+<div id="idea-stream">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4" ng-repeat="idea in ideas | orderBy: 'created_on': true">
+            <div class="idea panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <strong>{{idea.idea_name}}</strong>
+                       by
+                       <cite title="{{idea.username}}">{{idea.username}}</cite>
+                     </h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{idea.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
